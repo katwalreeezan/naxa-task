@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    min-height: 25px;
+    margin: 0 auto;
+    
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-family: Montserrat,sans-serif;
+    cursor: pointer;
+    font-size: 20px;
+}
+.navbar a:hover{
+ color: blue;
+}
+button{
+    background-color: #ffdc1c;
+    color: blue;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    font-weight: 600;
+    font-size: 15px;
+    
+}
+button:hover{
+    background-color: coral;
+}

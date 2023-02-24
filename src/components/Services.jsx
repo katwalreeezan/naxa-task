@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { fetchData } from '../redux/actions';
-import './Services.css'
+import './Services.css';
+import ReactHtmlParser from 'react-html-parser';
+
 
 const Services = () => {
   
@@ -32,10 +34,10 @@ const Services = () => {
             <img src={service.photo} alt='pic'/>
             <h3>{service.title}</h3>
             <div className='card-body'>
-            <p align ='justify'>{service.description1}</p>
+            <p align ='justify'>{ReactHtmlParser(service.description1)}</p>
             </div>
             <div className='card-bodytwo'>
-            <p>{service.description2} </p>
+            <p>{ReactHtmlParser(service.description2)} </p>
             </div>
             </div>
             <img src={service.icon} alt='icon' className='icon'/>

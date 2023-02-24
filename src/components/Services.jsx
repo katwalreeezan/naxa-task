@@ -1,24 +1,29 @@
 import React, { useEffect } from 'react';
-import {connect} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux';
 import { fetchData } from '../redux/actions';
 import './Services.css'
 
-const Services = ({ data, loading, error, fetchData }) => {
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+const Services = () => {
+  
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(fetchData())
+  },[])
+  const data=useSelector((state)=>state.servicesData.data)
+  console.log(data)
 
-  if (loading) {
+  if (data.loading) {
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Error: {error}</p>;
+  if (data.error) {
+    return <p>Error: {data.error}</p>;
   }
   
 
   return (<div>
      <h2> Our Services</h2>
+     {data.map((title)=><h3>{title.title}</h3>)}
       {data.map((service) => (
           <div key={service.id} className='maincard'>
             <div className='card'>
@@ -37,15 +42,4 @@ const Services = ({ data, loading, error, fetchData }) => {
     </div>
  );
 };
-
-const mapStateToProps = (state) => ({
-  data: state.data,
-  loading: state.loading,
-  error: state.error,
-});
-
-const mapDispatchToProps = {
-  fetchData,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Services);
+export default Services

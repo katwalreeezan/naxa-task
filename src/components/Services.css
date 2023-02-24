@@ -1,0 +1,46 @@
+.maincard{
+    font-family: Montserrat,sans-serif;
+    position: relative;
+    margin-top:  250px;
+    margin-left: 0px;
+    
+   
+    
+}
+h2{
+    color: #ffab00;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat,sans-serif;
+    font-weight: 600;
+}
+.maincard h3{
+    font-family: Montserrat,sans-serif;
+    font-weight: 600;
+    font-size: 2.125rem;
+    
+}
+.maincard .icon{
+    
+    position: absolute;
+    top: 100px;
+    left:100px;
+    width: 400px;
+    height: 450px;
+
+}
+.card{
+    position: relative;
+    left: 800px;
+    width: 700px;
+    height: 400px;
+    text-align: justify;
+    
+}
+.card-bodytwo{
+    background-color: #e9ebff;
+    padding: 10px 10px 10px 10px;
+}
+.title{
+    display: flex;
+}

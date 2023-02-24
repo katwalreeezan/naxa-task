@@ -8,7 +8,7 @@ const Services = () => {
   const dispatch=useDispatch()
   useEffect(()=>{
     dispatch(fetchData())
-  },[])
+  },[dispatch])
   const data=useSelector((state)=>state.servicesData.data)
   console.log(data)
 
@@ -23,7 +23,9 @@ const Services = () => {
 
   return (<div>
      <h2> Our Services</h2>
+     <div className='title'>
      {data.map((title)=><h3>{title.title}</h3>)}
+     </div>
       {data.map((service) => (
           <div key={service.id} className='maincard'>
             <div className='card'>

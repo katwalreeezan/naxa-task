@@ -43,4 +43,8 @@ h2{
 }
 .title{
     display: flex;
+    background-color: aliceblue;
+    gap: 50px;
+    color: dimgray;
+    padding-left: 30px;
 }

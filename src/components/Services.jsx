@@ -21,17 +21,18 @@ const Services = () => {
   if (data.error) {
     return <p>Error: {data.error}</p>;
   }
+  
   return (
     <div>
       <h2> Our Services</h2>
       <div className='title'>
-        {data.map((title) => (
+        {data.sort((a,b)=>a.service_order-b.service_order).map((title) => (
           <Link to={title.id} smooth={true} duration={500} key={title.id}>
             <h3>{title.title}</h3>
           </Link>
         ))}
       </div>
-      {data.map((service) => (
+      {data.sort((a, b) => a.service_order - b.service_order).map((service) => (
         <div key={service.id} className='maincard' id={service.id}>
           <div className='card'>
             <img src={service.photo} alt='pic' />
@@ -42,12 +43,12 @@ const Services = () => {
             <div className='card-bodytwo'>
               <p>{ReactHtmlParser(service.description2)} </p>
             </div>
-          </div>
-          <img src={service.icon} alt='icon' className='icon' />
-        </div>
-            ))}
             </div>
-          );
+        <img src={service.icon} alt='icon' className='icon' />
+      </div>
+    ))}
+  </div>
+);
         };
         
         export default Services;
